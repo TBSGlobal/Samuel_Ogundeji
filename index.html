@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Ogundeji - Media Intelligence Analyst</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #8b6914;
+            --accent: #c9952e;
+            --bg: #fafaf8;
+            --text: #2a2a2a;
+            --text-light: #666;
+            --border: #e0dfd8;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(135deg, transparent 0%, rgba(201, 149, 46, 0.03) 100%),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(139, 105, 20, 0.02) 2px, rgba(139, 105, 20, 0.02) 4px);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            padding: 8rem 6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .eyebrow {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.2s forwards;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.4s forwards;
+        }
+
+        .hero h1 .highlight {
+            color: var(--secondary);
+            font-style: italic;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.6s forwards;
+        }
+
+        .hero .description {
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 3rem;
+            max-width: 500px;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.8s forwards;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 1s forwards;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--secondary);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn-primary:hover::before {
+            left: 0;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem;
+            animation: slideInRight 1s ease-out;
+        }
+
+        .image-container {
+            position: relative;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .image-container::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px solid var(--secondary);
+            z-index: 1;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+            z-index: 2;
+            filter: grayscale(20%);
+        }
+
+        .decorative-text {
+            position: absolute;
+            font-size: 8rem;
+            font-weight: 700;
+            color: rgba(201, 149, 46, 0.05);
+            z-index: 0;
+            pointer-events: none;
+            top: 50%;
+            left: -2rem;
+            transform: translateY(-50%);
+            line-height: 1;
+        }
+
+        /* Problem Statement Section */
+        .problem-section {
+            padding: 8rem 6rem;
+            background: var(--primary);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .problem-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent 0%, rgba(201, 149, 46, 0.1) 100%);
+            pointer-events: none;
+        }
+
+        .problem-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .problem-content .quote {
+            font-size: 2.5rem;
+            line-height: 1.4;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            font-style: italic;
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .problem-content .quote::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -1rem;
+            font-size: 8rem;
+            color: var(--accent);
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1;
+        }
+
+        .problem-content .solution {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-top: 3rem;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 8rem 6rem;
+            background: var(--bg);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-header .label {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            padding: 3rem;
+            background: white;
+            border: 1px solid var(--border);
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--secondary);
+            transition: height 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .service-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: rgba(201, 149, 46, 0.2);
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Experience Section */
+        .experience-section {
+            padding: 8rem 6rem;
+            background: linear-gradient(135deg, #f5f3ed 0%, #fafaf8 100%);
+        }
+
+        .experience-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .experience-card {
+            background: white;
+            padding: 4rem;
+            border-left: 4px solid var(--secondary);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .experience-card h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .experience-card .role {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .experience-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .highlights {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .highlights h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .highlights ul {
+            list-style: none;
+        }
+
+        .highlights li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        .highlights li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 8rem 6rem;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .contact-section .tagline {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 4rem;
+            font-weight: 300;
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item .icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .contact-item .label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+
+        .publications-link {
+            display: inline-block;
+            padding: 1.5rem 3rem;
+            background: var(--accent);
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .publications-link:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 149, 46, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 6rem;
+            background: #0a0a0a;
+            color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                padding: 4rem 3rem;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-image {
+                padding: 3rem;
+            }
+
+            .problem-section,
+            .services-section,
+            .experience-section,
+            .contact-section {
+                padding: 5rem 3rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 2rem 3rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-content {
+                padding: 3rem 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+            }
+
+            .problem-content .quote {
+                font-size: 1.75rem;
+                padding-left: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .contact-section h2 {
+                font-size: 2.5rem;
+            }
+
+            .contact-methods {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+
+        /* Scroll animation trigger */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="eyebrow">Media Intelligence & PR Analytics</div>
+            <h1 class="serif">
+                Defend Your PR Campaigns<br>
+                in the <span class="highlight">Boardroom</span>
+            </h1>
+            <p class="subtitle">Consulting Media Intelligence Analyst</p>
+            <p class="description">
+                Specializing in quantitative and qualitative PR campaign reporting using advanced media intelligence tools. Transforming PR execution into boardroom-ready analytics.
+            </p>
+            <div class="cta-group">
+                <a href="#contact" class="btn btn-primary">Let's Talk</a>
+                <a href="#services" class="btn btn-secondary">My Services</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="decorative-text serif">PR</div>
+            <div class="image-container">
+                <img src="/image.png" alt="Samuel Ogundeji" id="profile-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Statement Section -->
+    <section class="problem-section">
+        <div class="problem-content">
+            <p class="quote serif">
+                Running a PR Campaign has now become the easiest thing to do, especially when there is a budget... but reporting that campaign (quantitatively and qualitatively)? Many times becomes the problem.
+            </p>
+            <p class="solution">
+                I ensure every PR Manager can confidently defend their PR campaigns in the Boardroom.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="section-header fade-in">
+            <div class="label">What I Do</div>
+            <h2 class="serif">Core Services</h2>
+            <p>Strategic media intelligence and analytics that transform PR campaigns into measurable business outcomes</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-number serif">01</div>
+                <h3>Media Coverage Reports</h3>
+                <p>Comprehensive monitoring and analysis of your brand's media presence across all channels, delivering actionable insights that demonstrate real impact.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-number serif">02</div>
+                <h3>Comparative Analytics</h3>
+                <p>In-depth competitive benchmarking and brand positioning analysis using advanced media intelligence tools to track your performance against industry peers.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-number serif">03</div>
+                <h3>PR Campaign Reporting</h3>
+                <p>Boardroom-ready quantitative and qualitative reports that translate PR activities into measurable KPIs, ROI metrics, and strategic recommendations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience-section" id="experience">
+        <div class="section-header fade-in">
+            <div class="label">Background</div>
+            <h2 class="serif">Professional Experience</h2>
+        </div>
+        <div class="experience-content">
+            <div class="experience-card fade-in">
+                <h3 class="serif">Public Relations Account Manager & Media Intelligence Analyst</h3>
+                <p class="role">Precise Platform Limited, Lagos</p>
+                <p>
+                    Managed end-to-end PR campaigns across Executive Profiling, Thought Leadership, Pan-African ESG Forums, and Advocacy initiatives for one of the largest tobacco companies globally with the biggest market share in Nigeria—operating in highly regulated media and economic landscapes including Nigeria, Cameroon, and Ghana.
+                </p>
+                <div class="highlights">
+                    <h4>Key Sectors & Capabilities</h4>
+                    <ul>
+                        <li>Mobile Technology & Consumer Electronics</li>
+                        <li>Oil & Gas (Upstream and Downstream)</li>
+                        <li>FMCG & Beverage Industries</li>
+                        <li>Agricultural Sector</li>
+                        <li>Banking & Financial Services</li>
+                    </ul>
+                </div>
+                <div class="highlights">
+                    <h4>Campaign Types</h4>
+                    <ul>
+                        <li>Executive Profiling & Thought Leadership</li>
+                        <li>Press Conference & Event Amplification</li>
+                        <li>Crisis Communications & Advocacy</li>
+                        <li>Media Relations in Regulated Environments</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2 class="serif">Ready to Elevate Your PR Reporting?</h2>
+        <p class="tagline">Let's build your next boardroom-ready analytics report</p>
+        
+        <div class="contact-methods">
+            <div class="contact-item">
+                <div class="icon">📞</div>
+                <div class="label">Call / WhatsApp</div>
+                <a href="tel:+2348160122896">+234 816 012 2896</a>
+            </div>
+            <div class="contact-item">
+                <div class="icon">✉️</div>
+                <div class="label">Email</div>
+                <a href="mailto:ogundejisamuel2017@gmail.com">ogundejisamuel2017@gmail.com</a>
+            </div>
+        </div>
+
+        <a href="https://www.clippings.me/samuelogundeji" target="_blank" class="publications-link">
+            View My Publications →
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Samuel Ogundeji. Media Intelligence & PR Analytics Specialist.</p>
+    </footer>
+
+    <script>
+        // Scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Load profile image
+        fetch('/mnt/user-data/uploads/Gemini_Generated_Image_t6sgybt6sgybt6sg.png')
+            .then(response => response.blob())
+            .then(blob => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profile-img').src = e.target.result;
+                };
+                reader.readAsDataURL(blob);
+            })
+            .catch(err => console.log('Image loading handled by browser'));
+    </script>
+</body>
+</html>
