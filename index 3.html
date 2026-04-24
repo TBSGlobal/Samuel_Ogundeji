@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosline Hassan - Strategic Communications & Media Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0a0e27;
+            --secondary: #e63946;
+            --accent: #ff6b6b;
+            --bg: #f8f9fa;
+            --text: #212529;
+            --text-light: #6c757d;
+            --border: #dee2e6;
+            --highlight: #fff3e0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .serif {
+            font-family: 'DM Serif Display', serif;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(248, 249, 250, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 6rem;
+            background: 
+                linear-gradient(135deg, rgba(230, 57, 70, 0.03) 0%, transparent 50%),
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 60px,
+                    rgba(230, 57, 70, 0.01) 60px,
+                    rgba(230, 57, 70, 0.01) 120px
+                );
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            right: 10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(230, 57, 70, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--highlight);
+            color: var(--secondary);
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            font-weight: 700;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .hero h1 .highlight {
+            color: var(--secondary);
+            font-style: italic;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 4rem;
+            animation: fadeInUp 0.8s ease-out 0.6s backwards;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--secondary);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.5rem;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 3rem;
+            animation: fadeInUp 0.8s ease-out 0.8s backwards;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #d62839;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            color: var(--secondary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Philosophy Section */
+        .philosophy-section {
+            background: white;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .philosophy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .philosophy-quote {
+            font-size: 2rem;
+            line-height: 1.6;
+            color: var(--primary);
+            font-weight: 400;
+            text-align: center;
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .philosophy-quote::before {
+            content: '"';
+            position: absolute;
+            top: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 6rem;
+            color: rgba(230, 57, 70, 0.1);
+            font-family: 'DM Serif Display', serif;
+        }
+
+        .philosophy-author {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        /* Expertise Grid */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .expertise-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .expertise-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .expertise-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .expertise-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(230, 57, 70, 0.1), rgba(255, 107, 107, 0.1));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .expertise-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .expertise-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Impact Section */
+        .impact-section {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1e3a 100%);
+            color: white;
+        }
+
+        .impact-section .section-label {
+            color: var(--accent);
+        }
+
+        .impact-section .section-title {
+            color: white;
+        }
+
+        .impact-section .section-description {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .impact-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .impact-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .impact-brand {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .impact-card h4 {
+            font-size: 1.1rem;
+            color: white;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .impact-card p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            background: white;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category {
+            padding: 2rem;
+            background: var(--bg);
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .skill-category h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            color: var(--text-light);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .skill-category li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--bg);
+            text-align: center;
+        }
+
+        .contact-cards {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            min-width: 250px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            display: block;
+            word-break: break-word;
+        }
+
+        .contact-link:hover {
+            color: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 2.5rem 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive - Tablet */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .stats-row {
+                gap: 2rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Responsive - Mobile */
+        @media (max-width: 768px) {
+            nav .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(248, 249, 250, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                display: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            nav .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 6rem 1.5rem 4rem;
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+                margin-bottom: 2rem;
+            }
+
+            .stats-row {
+                flex-direction: column;
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: stretch;
+                margin-top: 2rem;
+            }
+
+            .btn {
+                text-align: center;
+                width: 100%;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-description {
+                font-size: 1.1rem;
+            }
+
+            .philosophy-quote {
+                font-size: 1.5rem;
+                padding: 1.5rem 0;
+            }
+
+            .philosophy-quote::before {
+                font-size: 4rem;
+            }
+
+            .expertise-grid,
+            .impact-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .expertise-card,
+            .impact-card,
+            .skill-category {
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-cards {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .contact-card {
+                min-width: auto;
+            }
+        }
+
+        /* Responsive - Small Mobile */
+        @media (max-width: 480px) {
+            nav .container {
+                padding: 1.25rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-label {
+                font-size: 0.75rem;
+                padding: 0.4rem 1.2rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .stat-label {
+                font-size: 0.8rem;
+            }
+
+            .btn {
+                padding: 0.875rem 2rem;
+                font-size: 0.95rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .section-label {
+                font-size: 0.75rem;
+            }
+
+            .philosophy-quote {
+                font-size: 1.3rem;
+            }
+
+            .expertise-card h3,
+            .impact-card h4,
+            .skill-category h3 {
+                font-size: 1.2rem;
+            }
+
+            .expertise-card p,
+            .impact-card p,
+            .skill-category li {
+                font-size: 0.9rem;
+            }
+
+            .expertise-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Rosline Hassan</div>
+            <ul class="nav-links">
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Connect</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-label">Strategic Communications & Media Intelligence</div>
+            <h1 class="serif">
+                Helping Brands Achieve<br>
+                <span class="highlight">Communication Excellence</span>
+            </h1>
+            <p class="subtitle">
+                Strategic communications professional translating media intelligence into actionable insights that drive consumer engagement, brand visibility, and stakeholder confidence.
+            </p>
+            
+            <div class="stats-row">
+                <div class="stat-item">
+                    <span class="stat-number serif">10+</span>
+                    <span class="stat-label">Brands Supported</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number serif">4</span>
+                    <span class="stat-label">Key Sectors</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number serif">₦600M</span>
+                    <span class="stat-label">Campaign Value</span>
+                </div>
+            </div>
+
+            <div class="cta-group">
+                <a href="#contact" class="btn btn-primary">Let's Connect</a>
+                <a href="#impact" class="btn btn-secondary">View Impact</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy-section">
+        <div class="container">
+            <div class="philosophy-content">
+                <p class="philosophy-quote serif">
+                    Great communication isn't about the number of press releases sent—it's about understanding what the data reveals, what audiences care about, and how to turn insights into strategies that move brands forward.
+                </p>
+                <p class="philosophy-author">— My Approach to Strategic Communications</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label">What I Do</div>
+                <h2 class="section-title serif">Core Expertise</h2>
+                <p class="section-description">
+                    Helping organizations transform communication challenges into opportunities through data-driven strategy and execution
+                </p>
+            </div>
+
+            <div class="expertise-grid">
+                <div class="expertise-card reveal">
+                    <div class="expertise-icon">📊</div>
+                    <h3>Media Intelligence & Analysis</h3>
+                    <p>
+                        Translating complex media data from platforms like Talkwalker and Brandwatch into strategic insights that inform communication decisions and measure campaign performance.
+                    </p>
+                </div>
+
+                <div class="expertise-card reveal">
+                    <div class="expertise-icon">🎯</div>
+                    <h3>Consumer Campaign Strategy</h3>
+                    <p>
+                        Developing and executing communication strategies that drive consumer engagement, from brand launches to multi-million naira activation campaigns.
+                    </p>
+                </div>
+
+                <div class="expertise-card reveal">
+                    <div class="expertise-icon">🛡️</div>
+                    <h3>Crisis Communication Planning</h3>
+                    <p>
+                        Building frameworks that help brands respond effectively to reputational risks, from media training to simulation exercises and crisis preparedness.
+                    </p>
+                </div>
+
+                <div class="expertise-card reveal">
+                    <div class="expertise-icon">🤝</div>
+                    <h3>Stakeholder Engagement</h3>
+                    <p>
+                        Managing strategic communication for investor confidence and stakeholder awareness through comprehensive mapping, planning, and monitoring.
+                    </p>
+                </div>
+
+                <div class="expertise-card reveal">
+                    <div class="expertise-icon">📈</div>
+                    <h3>Campaign Performance Reporting</h3>
+                    <p>
+                        Creating data-driven reports that measure media visibility, sentiment, engagement, and ROI—translating campaign activities into measurable outcomes.
+                    </p>
+                </div>
+
+                <div class="expertise-card reveal">
+                    <div class="expertise-icon">💡</div>
+                    <h3>Influencer Campaign Management</h3>
+                    <p>
+                        Coordinating partnerships with digital creators and influencers to expand campaign reach among target audiences and maximize brand amplification.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section" id="impact">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label">Real Results</div>
+                <h2 class="section-title serif">Brands I've Helped</h2>
+                <p class="section-description">
+                    Strategic communication support across FMCG, lifestyle, infrastructure, and corporate sectors
+                </p>
+            </div>
+
+            <div class="impact-grid">
+                <div class="impact-card reveal">
+                    <div class="impact-brand">Coca-Cola Nigeria</div>
+                    <h4>Consumer Engagement & Campaign Amplification</h4>
+                    <p>
+                        Supported Win-Buy-Scan promotion strategy and Coke Studio activation (₦600M prize initiative), driving engagement through influencer partnerships and media monitoring.
+                    </p>
+                </div>
+
+                <div class="impact-card reveal">
+                    <div class="impact-brand">Henkel Nigeria</div>
+                    <h4>Product Launch & Crisis Preparedness</h4>
+                    <p>
+                        Managed PR amplification for WAW detergent launch and strengthened crisis communication frameworks through media training and simulation exercises.
+                    </p>
+                </div>
+
+                <div class="impact-card reveal">
+                    <div class="impact-brand">I-Fitness Nigeria</div>
+                    <h4>Brand Expansion Communication</h4>
+                    <p>
+                        Supported communication for 10+ gym launches across Nigeria, developing narratives that positioned I-Fitness as a leading lifestyle brand.
+                    </p>
+                </div>
+
+                <div class="impact-card reveal">
+                    <div class="impact-brand">Orashi SEFZ</div>
+                    <h4>Stakeholder & Investor Communication</h4>
+                    <p>
+                        Managed strategic documentation, stakeholder mapping, and communication planning to strengthen investor confidence and policy awareness.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label">Capabilities</div>
+                <h2 class="section-title serif">Professional Skills</h2>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category reveal">
+                    <h3>Strategic Communications</h3>
+                    <ul>
+                        <li>PR Campaign Planning & Execution</li>
+                        <li>Crisis Communications</li>
+                        <li>Stakeholder Engagement</li>
+                        <li>Media Relations</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category reveal">
+                    <h3>Media Intelligence</h3>
+                    <ul>
+                        <li>Talkwalker & Brandwatch Analysis</li>
+                        <li>Media Monitoring & Tracking</li>
+                        <li>Sentiment Analysis</li>
+                        <li>Competitor Benchmarking</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category reveal">
+                    <h3>Campaign Management</h3>
+                    <ul>
+                        <li>Consumer Campaign Amplification</li>
+                        <li>Influencer Partnerships</li>
+                        <li>Brand Launch Strategy</li>
+                        <li>Digital Creator Coordination</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category reveal">
+                    <h3>Data & Reporting</h3>
+                    <ul>
+                        <li>Campaign Performance Analysis</li>
+                        <li>KPI Development & Tracking</li>
+                        <li>Data Visualization</li>
+                        <li>Strategic Insights Generation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label">Get In Touch</div>
+                <h2 class="section-title serif">Let's Connect</h2>
+                <p class="section-description">
+                    Open to conversations about strategic communications, media intelligence, and helping brands achieve communication excellence
+                </p>
+            </div>
+
+            <div class="contact-cards">
+                <div class="contact-card reveal">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-label">Email</div>
+                    <a href="mailto:hassanroseline@gmail.com" class="contact-link">hassanroseline@gmail.com</a>
+                </div>
+
+                <div class="contact-card reveal">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-label">Phone</div>
+                    <a href="tel:+2348137361397" class="contact-link">+234 813 736 1397</a>
+                </div>
+
+                <div class="contact-card reveal">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-label">Location</div>
+                    <span class="contact-link" style="cursor: default;">Lagos, Nigeria</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Rosline Hassan. Strategic Communications & Media Intelligence Professional.</p>
+            <p>Helping brands achieve communication excellence through data-driven insights and strategic execution.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const revealPoint = 100;
+                
+                if (elementTop < windowHeight - revealPoint) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                navLinks.classList.remove('active'); // Close mobile menu on link click
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
